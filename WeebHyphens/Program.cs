@@ -10,6 +10,7 @@ namespace WeebHyphens
 
         static bool IsVowel(char vowel)
         {
+            vowel = Char.ToLower(vowel);
             return (vowel == 'a' || vowel == 'e' || vowel == 'i' || vowel == 'o' || vowel == 'u');
         }
 
@@ -36,6 +37,10 @@ namespace WeebHyphens
 
         static bool IsDigraph(char c1, char c2)
         {
+
+            c1 = Char.ToLower(c1);
+            c2 = Char.ToLower(c2);
+
             if (c1 == 't' && c2 == 's')
             {
                 return true;
@@ -60,6 +65,10 @@ namespace WeebHyphens
 
         static bool IsTrigraph(char c1, char c2, char c3)
         {
+            c1 = Char.ToLower(c1);
+            c2 = Char.ToLower(c2);
+            c3 = Char.ToLower(c3);
+
             return (IsDigraph(c1, c2) && c3 == 'y');
         }
 
@@ -124,6 +133,7 @@ namespace WeebHyphens
                         {
                             i++;
                             tempWriteString += tempReadChars[i];
+                            continue;
                         }
 
                         if ( tempReadChars[i+1] == ' ' )
