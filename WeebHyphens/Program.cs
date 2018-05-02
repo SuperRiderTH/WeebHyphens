@@ -68,6 +68,8 @@ namespace WeebHyphens
             System.IO.StreamReader readStream;
             System.IO.StreamWriter writeStream;
 
+            bool DragAndDrop = false;
+
             String ifilename = "";
             String ofilename = "";
 
@@ -86,6 +88,13 @@ namespace WeebHyphens
                 if (args.Length == 1)
                 {
                     ifilename = args[0];
+                    DragAndDrop = true;
+                }
+                else
+                {
+                    Console.WriteLine("Too many arguments provided, press Enter to close.");
+                    Console.ReadLine();
+                    Environment.Exit(1);
                 }
             }
 
@@ -179,7 +188,14 @@ namespace WeebHyphens
             readStream.Close();
             writeStream.Close();
 
-            Console.ReadLine();
+            if ( !DragAndDrop )
+            {
+                Console.WriteLine();
+                Console.WriteLine("Press Enter to close.");
+                Console.ReadLine();
+            }
+            
+            Environment.Exit(0);
 
         }
 
