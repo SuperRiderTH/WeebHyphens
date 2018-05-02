@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2043
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeebHyphens", "WeebHyphens\WeebHyphens.csproj", "{BC8E1BBE-A2F4-4B5F-822C-89802C002C70}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BC8E1BBE-A2F4-4B5F-822C-89802C002C70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC8E1BBE-A2F4-4B5F-822C-89802C002C70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC8E1BBE-A2F4-4B5F-822C-89802C002C70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC8E1BBE-A2F4-4B5F-822C-89802C002C70}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B6433A7C-BB82-458D-BF5E-8379EBB9E40A}
+	EndGlobalSection
+EndGlobal
