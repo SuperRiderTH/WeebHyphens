@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -29,11 +29,29 @@ namespace WeebHyphens
                 case '\"':
                 case '!':
                 case '?':
+                case '(':
+                case ')':
                     return true;
                 default:
                     return false;
             }
         }
+
+        static bool IsRBNCharacter(char c)
+        {
+            switch (c)
+            {
+                case '+':
+                case '#':
+                case '^':
+                case '=':
+                case '@':
+                    return true;
+                default:
+                    return false;
+            }
+        }
+
 
         static bool IsDigraph(char c1, char c2)
         {
@@ -128,6 +146,28 @@ namespace WeebHyphens
 
                     if ( (i + 1) != tempReadChars.Length )
                     {
+
+                        if (tempReadChars[i+1] == '-')
+                        {
+                            i++;
+                            tempWriteString += "= ";
+                            continue;
+                        }
+
+                        if (IsRBNCharacter(tempReadChars[i + 1]))
+                        {
+                            tempWriteString += tempReadChars[i + 1];
+                            tempWriteString += " ";
+                            i += 2;
+                            continue;
+                        }
+
+                        if (IsRBNCharacter(tempReadChars[i]))
+                        {
+                            i++;
+                            tempWriteString += tempReadChars[i];
+                            continue;
+                        }
 
                         if (IsPunctuation(tempReadChars[i + 1]))
                         {
