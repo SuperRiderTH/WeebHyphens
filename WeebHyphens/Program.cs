@@ -154,6 +154,13 @@ namespace WeebHyphens
                             continue;
                         }
 
+                        if (tempReadChars[i + 1] == '…')
+                        {
+                            i++;
+                            tempWriteString += "...";
+                            continue;
+                        }
+
                         if (IsRBNCharacter(tempReadChars[i + 1]))
                         {
                             tempWriteString += tempReadChars[i + 1];
@@ -163,6 +170,13 @@ namespace WeebHyphens
                         }
 
                         if (IsRBNCharacter(tempReadChars[i]))
+                        {
+                            i++;
+                            tempWriteString += tempReadChars[i];
+                            continue;
+                        }
+
+                        if (IsPunctuation(tempReadChars[i]))
                         {
                             i++;
                             tempWriteString += tempReadChars[i];
